@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Offer;
 use App\Models\Need;
+use App\Models\Assignment;
 use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
@@ -74,6 +75,18 @@ class StatsController extends Controller
 
         $verifiedUsers = User::whereNotNull('email_verified_at')->join('model_has_roles', 'users.id', 'model_has_roles.model_id')->get();
         // dd($verifiedUsers);
+
+        $assignment_data = Assignment::all()->where('created_at', '>=', Carbon::now()->subYear())->groupBy(function($_assignment) {
+            return $_assignment->created_at->format('m');
+        })->sortBy('created_at');
+        $month_shift = $assignment_data->keys()[0];
+
+        $assignments = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        foreach($assignment_data as $key => $d) {
+            $assignments[(int) $key] = count($d);
+            // dd($assignments);
+        }
+        // dd($assignments);
 
         $m09_last_year = 0;
         $m09_last_year_helfende = 0;
@@ -312,7 +325,9 @@ class StatsController extends Controller
                 'm07_current_year_moderation',
                 'm08_current_year_helfende',
                 'm08_current_year_lehrende',
-                'm08_current_year_moderation'
+                'm08_current_year_moderation',
+                'assignments',
+                'month_shift'
             )
         );
     }

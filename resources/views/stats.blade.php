@@ -327,7 +327,7 @@
 
                                     <h3 class="font-semibold text-lg text-gray-600">Lernende</h3>
 
-                                    <p class="text-sm text-gray-500">Betreute Lernende</p>
+                                    <p class="text-sm text-gray-500">Betreute Lernende der letzten 12 Monate</p>
 
                                 </div>
 
@@ -579,10 +579,6 @@
             
             //Lernende
             labels = [
-              'September',
-              'Oktober',
-              'November',
-              'Dezember',
               'Januar',
               'Februar',
               'März',
@@ -591,14 +587,22 @@
               'Juni',
               'Juli',
               'August',
+              'September',
+              'Oktober',
+              'November',
+              'Dezember',
             ];
+            shifted_labels = [];
+            for(i = 0; i < 12; i++) {
+              shifted_labels.push(labels[(i+{{ $month_shift }}) % 12]);
+            };
             data = {
-              labels: labels,
+              labels: shifted_labels,
               datasets: [{
-                label: 'Betreute Lernende',
+                //label: 'Betreute Lernende',
                 backgroundColor: 'rgba(5, 150, 105, 0.6)',
                 borderColor: 'rgba(5, 150, 105, 0.6)',
-                data: [4, 0, 0, 0, 0, 0, 0],
+                data: [{{ $assignments[($month_shift + 1) % 12] }},  {{ $assignments[($month_shift + 2) % 12] }}, {{ $assignments[($month_shift + 3) % 12] }}, {{ $assignments[($month_shift + 4) % 12] }}, {{ $assignments[($month_shift + 5) % 12] }}, {{ $assignments[($month_shift + 6) % 12] }}, {{ $assignments[($month_shift + 7) % 12] }}, {{ $assignments[($month_shift + 8) % 12] }}, {{ $assignments[($month_shift + 9) % 12] }}, {{ $assignments[($month_shift + 10) % 12] }}, {{ $assignments[($month_shift + 11) % 12] }}, {{ $assignments[(int)$month_shift] }}],
               }]
             };
 
