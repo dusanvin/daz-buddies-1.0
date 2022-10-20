@@ -12,7 +12,7 @@
 
         <p class="font-normal text-base px-5 py-2">
 
-            <a href="/register" class="text-purple-500">Registrieren Sie sich direkt</a> oder lassen Sie sich von einer/einem ModeratorIn registrieren. Im Anschluss können Sie sich <a href="/login" class="text-purple-500">anmelden</a>.
+            <a href="/register" class="text-purple-500">Registrieren Sie sich direkt</a> oder lassen Sie sich von einer/einem <a href="mailto:agnes.wagner@student.uni-augsburg.de">ModeratorIn</a> registrieren. Im Anschluss können Sie sich <a href="/login" class="text-purple-500">anmelden</a>.
         
         </p>
 

@@ -12,7 +12,7 @@
 
         <p class="font-normal text-base px-5 py-2">
 
-            Nutzen Sie das FAQ, um Antworten zu den häufigsten Fragen zu erhalten. Kontaktieren Sie bei technischen Anliegen das <a href="mailto:digillab@zlbib.uni-augsburg.de" class="text-purple-500">DigiLLab</a>. Treten Sie bei Anliegen bezüglich Ihres Praktikums mit <a href="mailto:didaktik_daz_daf@philhist.uni-augsburg.de" class="text-purple-500">Monika Duldner (Lehrstuhlsekretariat Deutsch als Zweit- und Fremdsprache)</a> in Verbindung.
+            Nutzen Sie das FAQ, um Antworten zu den häufigsten Fragen zu erhalten. Kontaktieren Sie bei technischen Anliegen das <a href="mailto:digillab@zlbib.uni-augsburg.de" class="text-purple-500">DigiLLab</a>. Treten Sie bei Anliegen bezüglich Ihres Praktikums mit Agnes Wagner oder Nataliya Levytka in Verbindung.
         
         </p>
 
