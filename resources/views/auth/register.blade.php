@@ -178,7 +178,7 @@
 
                     <input id="privacy_statement" type="checkbox" name="privacy_statement">
 
-                        Ich habe die <a href="#" style="color: rgb(124, 58, 237);" class="hover:underline">Datenschutzerklärung</a> gelesen.*
+                        Ich habe die <a href="https://www.uni-augsburg.de/de/impressum/datenschutz/" style="color: rgb(124, 58, 237);" class="hover:underline">Datenschutzerklärung</a> gelesen und willige in die Verarbeitung meiner Daten ein.*
 
                 </div>
 
