@@ -262,9 +262,6 @@ class NeedsController extends Controller
 
     public function destroy(Need $need)
     {
-        if (!$need->ownedBy(auth()->user())) {
-            return back();
-        }
 
         $need->delete();
         return back();

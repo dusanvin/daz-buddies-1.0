@@ -261,9 +261,7 @@ class OffersController extends Controller
 
     public function destroy(Offer $offer)
     {
-        if (!$offer->ownedBy(auth()->user())) {
-            return back();
-        }
+
 
         $offer->delete();
         return back();
