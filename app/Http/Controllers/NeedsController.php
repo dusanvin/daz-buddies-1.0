@@ -14,7 +14,7 @@ class NeedsController extends Controller
 
     public function all()
     {
-        $needs = Need::with([
+        $needs = Need::where('active', true)->with([
             'user',
             'likes'
         ])->latest()->paginate(10);
@@ -43,6 +43,8 @@ class NeedsController extends Controller
     public function filtered(Request $request)
     {
         $needs = Need::query();
+
+        $needs = $needs->where('active', true);
 
         $dates = explode('bis', $request->datum);
         if (!is_null($request->datum)) {

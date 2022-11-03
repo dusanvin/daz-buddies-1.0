@@ -14,7 +14,7 @@ class OffersController extends Controller
 
     public function all()
     {
-        $offers = Offer::with([
+        $offers = Offer::where('active', true)->with([
             'user',
             'likes'
         ])->latest()->paginate(10);
@@ -43,6 +43,8 @@ class OffersController extends Controller
     public function filtered(Request $request)
     {
         $offers = Offer::query();
+
+        $offers = $offers->where('active', true);
 
         $dates = explode('bis', $request->datum);
         if (!is_null($request->datum)) {
@@ -109,7 +111,7 @@ class OffersController extends Controller
             'sprachkenntnisse' => $request->sprachkenntnisse,
             'studiengang' => $request->studiengang,
             'fachsemester' => $request->fachsemester,
-            'interessen' => $interessen,
+            'interessen' => $interessen
         ]);
     }
 
