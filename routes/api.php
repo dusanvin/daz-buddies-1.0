@@ -133,6 +133,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('roles', RoleController::class);
     });
 
+    Route::get('/mode', function() {
+        return dd(config('app.debug'));
+    });
+
     /*--------------------------------------------------------------------------*/
 
     /* Angebote */
